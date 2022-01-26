@@ -5,6 +5,7 @@ import uuid
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
+    featured_image = models.ImageField(null=True,blank=True, default="tiny-desicion-logo.png")
     demo_link = models.CharField(max_length=2000, blank=True)
     source_link = models.CharField(max_length=200, null=True, blank=True)
     tag = models.ManyToManyField('Tag', blank=True)

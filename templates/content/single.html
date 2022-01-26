@@ -2,7 +2,7 @@
 
 
 {% block content %}
-
+<img src="{{ project.featured_image.url}}" style="width:100px;height:100px;">
 <h1>{{ project.title }}</h1>
     <hr>
     {% for tag in project.tag.all %}
@@ -11,6 +11,15 @@
     <hr>
     <br>
     <p>{{ project.description }}</p>
+
+
+    {% if project.source_link %}
+    <a class="singleProject__liveLink" href="#" target="_blank"><i class="im im-external-link"></i>Source Code</a>
+    {% endif %}
+
+      {% if project.demo_link %}
+    <a class="singleProject__liveLink" href="#" target="_blank"><i class="im im-external-link"></i>Demo</a>
+    {% endif %}
 
 {% endblock content %}
 
